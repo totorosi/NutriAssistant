@@ -203,6 +203,7 @@ Controller → Service → Repository → MySQL
 | 표준 응답 | success / error 구조 통일로 프론트 처리 단순화 |
 | DB 설계 | 유니크 제약 및 인덱스, Auditing(createdAt) 적용 |
 | 운영 안정성 | `@Scheduled` 배치로 지표 분석·집계 자동화, GlobalExceptionHandler로 예외 중앙 처리 |
+| 식단 이미지 생성 | Google Vertex AI Imagen 모델을 호출해 식단 데이터 기반 급식 이미지 생성. 서비스 계정 인증으로 액세스 토큰 발급 |
 
 ### 5-3. 접근 정책 검증
 
@@ -286,7 +287,6 @@ EC2, S3, RDS(MySQL), ALB, CodePipeline, CodeBuild, CodeDeploy
 | 항목 | 내용 |
 |------|------|
 | 잔반량 자동 측정 | AI 잔반량 측정 모델과 연계해 급식 후 식판 이미지를 자동 분석 |
-| 식단 이미지 자동 생성 | 식단 데이터와 생성형 이미지 모델을 연계해 가상 급식 이미지 생성 |
 | 카테고리 기반 식단 편성 | 카테고리 제약을 AI 입력으로 활용 |
 | 신메뉴 통합 DB 자동 반영 | AI가 생성한 신메뉴를 검증 후 기존 음식 DB에 자동 반영 |
 
